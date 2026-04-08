@@ -1,0 +1,272 @@
+
+.clarity {
+  padding: 120px 80px;
+  background: #f5f5f3;
+  color: #000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-image: url("../public/cardboard.webp")
+}
+
+/* ---------- TOP ---------- */
+
+.clarity-eyebrow {
+  color: #2f5bff;
+  font-size: 15px;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+}
+
+.clarity-header {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 80px;
+  margin-top: 44px;
+  font-weight: 600;
+}
+
+.clarity-left h1 {
+  font-size: 56px;
+  line-height: 1.05;
+  margin-bottom: 24px;
+
+  @media (max-width: 768px) {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+}
+
+.clarity-left p {
+  font-size: 24px;
+  max-width: 620px;
+  color: #333;
+  font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: clamp(16px, 4vw, 20px);
+    max-width: 100%;
+  }
+}
+
+.clarity-right p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.clarity-link {
+  color: #2f5bff;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid #2f5bff;
+}
+
+/* ---------- CARDS ---------- */
+
+.clarity-cards {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 2px solid #2f5bff;
+  
+  
+}
+
+.clarity-card {
+  padding: 20px;
+  border-right: 2px solid #2f5bff;
+  position: relative;
+  padding-bottom: 40px;
+ 
+}
+
+.clarity-card:last-child {
+  border-right: none;
+}
+
+.clarity-card h3 {
+  font-size: 34px;
+  color: #2f5bff;
+  margin-bottom: 8px;
+  font-weight:600;
+
+}
+
+.clarity-sub {
+  font-weight: 400;
+  display: block;
+  margin-bottom: 12px;
+  color: #2f5bff;
+  font-size: 18px;
+}
+
+.clarity-card p {
+  font-size: 14px;
+  color: #333;
+  max-width: 260px;
+}
+
+/* ---------- VISUAL PLACEHOLDERS ---------- */
+
+.clarity-visual {
+  margin-top: 40px;
+  height: 220px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* subtle personality like reference */
+.clarity-visual.today::after {
+  position: absolute;
+  color: #9aff00;
+  font-size: 22px;
+  top: 20px;
+  left: 20px;
+
+}
+
+.clarity-visual.yesterday::after {
+  position: absolute;
+  font-size: 48px;
+  top: 40px;
+  right: 40px;
+}
+
+.clarity-visual.tomorrow::after {
+  position: absolute;
+  font-size: 48px;
+  bottom: 40px;
+  right: 40px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1024px) {
+  .clarity {
+    padding: 80px 40px;
+  }
+
+  .clarity-header {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .clarity-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .clarity-card {
+    border-right: none;
+    border-bottom: 1px solid #2f5bff;
+  }
+
+  .clarity-card:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .clarity {
+    padding: 48px 20px;
+  }
+
+  .clarity-header {
+    gap: 24px;
+    margin-top: 28px;
+  }
+
+  .clarity-cards {
+    margin-top: 48px;
+  }
+
+  .clarity-card h3 {
+    font-size: clamp(22px, 5vw, 28px);
+  }
+
+  .clarity-card p {
+    max-width: 100%;
+  }
+
+  .clarity-visual {
+    height: 180px;
+    margin-top: 24px;
+  }
+}
+
+
+/* ---------- CARDS CONTAINER ---------- */
+
+.clarity-cards {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #2f5bff; // Slightly thinner base border
+  background: #f5f5f3; // Match section background
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- INDIVIDUAL CARD ---------- */
+
+.clarity-card {
+  padding: 30px; // Slightly more breathing room like the image
+  border-right: 1px solid #2f5bff;
+  position: relative;
+  background: #f5f5f3;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); // Smooth transition
+  z-index: 1;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid #2f5bff;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  /* HOVER STATE */
+  &:hover {
+    z-index: 10; // Lift above other cards
+    background: #2f5bff; // Change background to blue on hover
+    transform: translateX(-10px) scale(1.0); // Pop out effect
+    border: 4px solid #9acd32; // Bright lime green border from image
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); // Add depth
+
+    /* Change text to white on hover */
+    h3, .clarity-sub, p {
+      color: #ffffff !important;
+    }
+
+    /* Change subtext background/style if needed */
+    .clarity-sub {
+        // Optional: keep specific color or make it white
+        color: #ffffff;
+    }
+  }
+}
+
+/* Ensure images within visual placeholders fit nicely */
+.clarity-visual {
+  margin-top: 40px;
+  height: 280px; 
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; // Align images to bottom like the reference
+
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}

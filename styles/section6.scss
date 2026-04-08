@@ -1,0 +1,394 @@
+// Section6 Styles
+.section6 {
+  position: relative;
+  width: 100%;
+  background: white;
+  padding-bottom: 80px;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  overflow: hidden;
+}
+
+// ── Platforms Bar ─────────────────────────────────────────
+.platforms-bar {
+  width: 100%;
+  padding: 32px 80px;
+  background: #f5f5f7;
+  border-bottom: 1px solid #e0e0e0;
+
+  @media (max-width: 768px) {
+    padding: 24px 20px;
+  }
+}
+
+.platforms-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: #999999;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.platforms-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.platform-logo {
+  font-size: 20px;
+  font-weight: 800;
+  cursor: default;
+  color: #bbbbbb;
+  letter-spacing: 0.04em;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #9acd32;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.platform-sep {
+  font-size: 20px;
+  color: #dddddd;
+}
+
+// ── Main Content ───────────────────────────────────────────
+.section6-content {
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 80px 80px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 80px;
+  align-items: start;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 60px 20px;
+  }
+}
+
+.testimonials-left {
+  position: sticky;
+  top: 100px;
+
+  @media (max-width: 968px) {
+    position: relative;
+    top: 0;
+  }
+}
+
+.section6-subtitle {
+  font-size: 11px;
+  font-weight: 700;
+  color: #4169e1;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+}
+
+.section6-title {
+  font-size: clamp(22px, 3.5vw, 36px);
+  font-weight: 500;
+  color: #000000;
+  margin: 0 0 40px 0;
+  line-height: 1.2;
+}
+
+// Author-card navigation
+.testimonial-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.testimonial-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.25s ease;
+
+  &:hover {
+    background: #f5f5f7;
+  }
+
+  &.active {
+    background: #f0f3ff;
+
+    .nav-avatar {
+      background: #4169e1;
+      color: #fff;
+    }
+
+    .nav-name {
+      color: #4169e1;
+    }
+  }
+}
+
+.nav-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #e8e8e8;
+  color: #555;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.nav-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.nav-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  transition: color 0.25s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-pos {
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// ── Testimonial Card ───────────────────────────────────────
+.testimonials-right {
+  min-width: 0;
+}
+
+.testimonial-card {
+  background: #f9f9fb;
+  border: 1px solid #ebebeb;
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    padding: 28px 24px;
+  }
+}
+
+.quote-mark {
+  font-size: 96px;
+  line-height: 0.6;
+  font-family: Georgia, serif;
+  color: #4169e1;
+  opacity: 0.25;
+  user-select: none;
+}
+
+.star-rating {
+  font-size: 20px;
+  color: #f5c518;
+  letter-spacing: 3px;
+}
+
+.testimonial-text {
+  font-size: clamp(18px, 2.2vw, 24px);
+  color: #111111;
+  line-height: 1.65;
+  margin: 0;
+  font-weight: 400;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 8px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #4169e1;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.author-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 2px 0;
+}
+
+.author-position {
+  font-size: 13px;
+  color: #888888;
+  margin: 0;
+}
+
+// Fade transitions
+@keyframes tFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.t-fade-in {
+  animation: tFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.t-fade-out {
+  animation: tFadeOut 0.32s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+// ── Clients Marquee ────────────────────────────────────────
+.clients-carousel {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  border-top: 1px solid #ebebeb;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.clients-track {
+  display: flex;
+  gap: 32px;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.client-logo {
+  flex: 0 0 auto;
+}
+
+.logo-frame {
+  position: relative;
+  width: 180px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  background: #ffffff;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    border-color: #4169e1;
+    box-shadow: 0 4px 20px rgba(65, 105, 225, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    width: 140px;
+    height: 72px;
+    padding: 15px;
+  }
+}
+
+.logo-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #555555;
+  text-align: center;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+}
+
+.client-logo.highlight .logo-frame {
+  background: #4169e1;
+  border-color: #4169e1;
+
+  .logo-text {
+    color: #ffffff;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 20px rgba(65, 105, 225, 0.3);
+  }
+}
