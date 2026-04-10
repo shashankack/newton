@@ -18,6 +18,8 @@
         "/products/bellow-covers/hsb2.png",
         "/products/bellow-covers/hsb3.jpeg",
         "/products/bellow-covers/hsb4.jpg",
+        "/products/bellow-covers/hsb5.png",
+        "/products/bellow-covers/hsb6.jpeg",
         "/products/bellow-covers/sewn-2.png",
         "/products/bellow-covers/sewn-1.png",
         "/products/bellow-covers/lamella-1.png",
@@ -69,7 +71,7 @@
             "body": [
               "These are authentic general purpose bellows manufactured with internal PVC support glued with an extenal PVC coating, resistant to dust, coolants spray, temperatures ranging from 30C to 75C. It also comes with lamellas, scissor frames etc to meet the complicated requirements of the machines."
             ],
-            "media": ["pictures", "Scissor lift bellow pic"]
+            "media": "/products/bellow-covers/sewn-1.png"
           }
         ]
       },
@@ -156,68 +158,73 @@
         "/products/wiper-systems/formed-wires-1.png",
         "/products/wiper-systems/formed-wipers-2.png",
         "/products/wiper-systems/moulded-wipers-1.png",
-        "/products/wiper-systems/moulded-wipers-2.png"
+        "/products/wiper-systems/moulded-wipers-2.png",
+        "/products/wiper-systems/moulded-wipers-3.jpg"
       ],
       "construction_variants": {
         "title": "CONSTRUCTION VARIANTS",
         "cards": [
           {
-            "tag": "MOULDED",
-            "title": "MOULDED WIPERS",
-            "description": "Precision-moulded wipers designed for consistent geometry, reliable sealing, and repeatable OEM performance.",
-            "footer_label": "PICTURES",
-            "media": "/products/wiper-systems/moulded-wipers-1.png"
+            "tag": "SS",
+            "title": "WAY WIPERS SS",
+            "description": "Stainless steel reinforced profiles for robust wiping and long service life on machine guideways.",
+            "footer_label": "4.6 mm stem profiles",
+            "media": "/products/wiper-systems/moulded-wipers-3.jpg"
           },
           {
-            "tag": "FORMED",
-            "title": "FORMED WIPERS",
-            "description": "Formed wipers manufactured from wear-resistant strips and shaped to suit specific guideway profiles and mounting conditions.",
-            "footer_label": "PICTURES",
+            "tag": "MS SERIES",
+            "title": "GENERAL WIPERS",
+            "description": "General purpose profiles in MS1 to MS6 geometries with multiple A/B/C/D size combinations.",
+            "footer_label": "MS1-MS6 standard profiles",
+            "media": "/products/wiper-systems/wipers.png"
+          },
+          {
+            "tag": "TELESCOPIC",
+            "title": "TELESCOPIC WIPERS",
+            "description": "Compact telescopic profiles including EN1, EN2, ENC and SS variants for guided sliding protection.",
+            "footer_label": "EN1 EN2 ENC SS",
+            "media": "/products/wiper-systems/formed-wipers-1.png"
+          },
+          {
+            "tag": "COVERED",
+            "title": "TELESCOPIC WIPERS WITH COVERING",
+            "description": "Covered telescopic profiles with integrated wiping lips for enhanced sealing against chips and coolant.",
+            "footer_label": "3.5 mm lip variants",
             "media": "/products/wiper-systems/formed-wipers-2.png"
           }
         ],
         "type_sections_with_pictures": [
           {
-            "title": "MOULDED WIPERS",
+            "title": "WAY WIPERS SS",
             "body": [
-              "Precision-moulded wipers designed for consistent geometry, reliable sealing, and repeatable OEM performance.",
-              "Suitable for series production and long-term supply programs",
-              "Features:",
-              "Injection or compression moulded for uniform profile accuracy",
-              "Stable wiping pressure across the full guideway length",
-              "Excellent resistance to oils, coolants, and wear",
-              "Applications:",
-              "CNC machine tools",
-              "Linear guideways and box ways",
-              "OEM-standardised machine designs"
+              "SS profile family shown with three height combinations: 21/25 mm, 14/18 mm, and 10/14 mm.",
+              "Common section dimensions include 4.6 mm stem width, 8 mm lip width, ~8.5 mm base, and 1 mm lip thickness.",
+              "Suitable where higher structural support and wear resistance are required.",
+              "Used on CNC guideways, telescopic covers, and retrofit way protection assemblies."
             ],
-            "media": "/products/bellow-covers/sewn1.jpg"
+            "media": "/products/wiper-systems/moulded-wipers-3.jpg"
           },
           {
-            "title": "FORMED WIPERS",
+            "title": "GENERAL WIPERS (MS1-MS6)",
             "body": [
-              "Formed Way Wipers",
-              "Formed wipers manufactured from wear-resistant strips and shaped to suit specific guideway profiles and mounting conditions.",
-              "Features:",
-              "Flexible design for non-standard or retrofit applications",
-              "Good wiping efficiency with controlled contact pressure",
-              "Cost-effective solution for low to medium volumes",
-              "Applications:",
-              "Retrofit and replacement wipers",
-              "Custom or legacy machine designs",
-              "General industrial machinery"
+              "MS1: A 14/18/25, B 6.5, C -, D 6.5/5, Length 500.",
+              "MS2: A 18/25, B 4.5, C 15/22, D 7.5, Length 560.",
+              "MS3: A 14/18/25, B 5, C 11/18/22, D 7, Length 500.",
+              "MS4: A 25/34, B 3, C 15/20, D 12, Length 800.",
+              "MS5: A 25/30, B 3, C 15.5/20.5, D 15, Length 800.",
+              "MS6: A 25/34, B 2, C 17/19, D -, Length 300/600."
             ],
-            "media": "/products/bellow-covers/sewn1.jpg"
+            "media": "/products/wiper-systems/wipers.png"
           },
           {
-            "title": "Guard Wipers",
+            "title": "TELESCOPIC WIPERS & TELESCOPIC WIPERS WITH COVERING",
             "body": [
-              "Guard wipers are designed to protect exposed machine components by preventing chips, dust, coolant, and debris from entering critical guideways and moving parts. Installed at strategic interfaces on machine guards and covers, they act as a first line of defence, reducing wear and extending machine service life.",
-              "Our guard wipers are manufactured for CNC machines and industrial equipment where reliable sealing and consistent wiping performance are essential. They are suitable for both OEM installations and retrofit or replacement applications.",
-              "Available in a range of profiles, sizes, and materials, guard wipers can be customised to suit specific machine geometries, operating speeds, and environmental conditions. Material options offer resistance to oils, coolants, and fine or abrasive particles, ensuring dependable performance in demanding shop-floor environments.",
-              "Designed for easy integration with machine guards, way covers, and bellows systems, our guard wipers provide a cost-effective solution for improving machine protection and reducing maintenance downtime."
+              "Telescopic wipers are available as EN1, EN2, ENC and SS profile types for compact moving interfaces.",
+              "Covered telescopic options include section variants shown with key dimensions such as 19/12/6.1/3.2, 8/6/3.5, and 12/6/3.5 configurations.",
+              "Designed for improved sealing where guideways are exposed to coolant and fine chips.",
+              "Suitable for CNC telescopic covers and custom machine guard integrations."
             ],
-            "media": "/products/bellow-covers/sewn1.jpg"
+            "media": "/products/wiper-systems/formed-wipers-2.png"
           }
         ]
       },
@@ -410,7 +417,8 @@
         "/products/roll-up-way-covers/rwc-3.png",
         "/products/roll-up-way-covers/rwc-4.png",
         "/products/roll-up-way-covers/rwc-5.jpeg",
-        "/products/roll-up-way-covers/rwc-6.jpeg"
+        "/products/roll-up-way-covers/rwc-6.jpeg",
+        "/products/roll-up-way-covers/rwc-7.png"
       ],
       "construction_variants": {
         "title": "CONSTRUCTION VARIANTS",
@@ -428,9 +436,64 @@
             "description": "Roll-up covers with a housing protect the roll-up cover and enable simple assembly, also retrofitting. The complete system provides selectable fixing possibilities and a defined belt outlet position.",
             "footer_label": "",
             "media": "/products/roll-up-way-covers/rwc-1.png"
+          },
+          {
+            "tag": "TYPE A",
+            "title": "Alumaflex Type A Rib",
+            "description": "Interlocked profile with polyurethane hinge. Bending in both directions is possible, with flat-end or angled-end bar options.",
+            "footer_label": "URETHANE HINGE",
+            "media": "/products/roll-up-way-covers/rwc-3.png"
+          },
+          {
+            "tag": "TYPE B",
+            "title": "Alumaflex Type B Rib",
+            "description": "Ball-and-socket interlock with plastic end caps and no polyurethane components. Custom ends are available.",
+            "footer_label": "BALL AND SOCKET",
+            "media": "/products/roll-up-way-covers/rwc-4.png"
+          },
+          {
+            "tag": "TYPE C",
+            "title": "Alumaflex Type C Rib",
+            "description": "Interlocked profile with hidden polyurethane hinge, providing a smoother and flatter surface with flat-end or angled-end options.",
+            "footer_label": "HIDDEN HINGE",
+            "media": "/products/roll-up-way-covers/rwc-5.jpeg"
           }
         ],
         "type_sections_with_pictures": [
+          {
+            "title": "MOTORISED ROLL WAY COVERS (ON REQUEST)",
+            "body": [
+              "Motorised roll way covers can be supplied on request for long travel, higher duty cycles, and synchronized movement requirements.",
+              "Fabric Used: A - Polyester coated with PVC; B - Polyester coated with Polyurethane; C - Stainless Steel; D - Polyester coated with Rubber; E - PVC Transparent; F - Aluminium cover carpet; G - Aluminium coated fabric.",
+              "Standard canister size range (A x A): 40x40, 50x50, 60x60, 70x70, 80x80, 90x90, 100x100, 110x110, 120x120, 130x130, 140x140, 150x150.",
+              "Band attachment positions supported: Horizontal, Frontal, and Vertical.",
+              "Fixing positions are available in multiple orientations to match machine space constraints.",
+              "Housing type options include visible-side mounting as shown in the reference layout."
+            ],
+            "media": "/products/roll-up-way-covers/rwc-7.png"
+          },
+          {
+            "title": "ALUMAFLEX RIB STYLES",
+            "body": [
+              "Type A: Interlocked with polyurethane hinge, bending in both directions possible. Angled or flat bar at end of shade.",
+              "Type B: Ball-and-socket interlock with plastic end caps. No polyurethane components.",
+              "Type C: Interlocked with hidden polyurethane hinge, resulting in a smoother, flatter surface. Angled or flat bar at end of shade.",
+              "Reference: Dynatect Alumaflex rib style guidance for profile selection."
+            ],
+            "media": "/products/roll-up-way-covers/rwc-6.jpeg"
+          },
+          {
+            "title": "ALUMAFLEX ROLL-UP COVERS: RIB PROFILE DIMENSIONS",
+            "body": [
+              "Type A rib (urethane hinge): approx. 0.20 in [5.1 mm] profile height, ~0.80 in [20.4 mm] pitch region, and end-bar options with 0.78 in [19.9 mm] projection.",
+              "Type A end options: Flat End and Angled End; Angled End overall height shown as 0.95 in [24.1 mm].",
+              "Type B rib: approx. 0.24 in [6.0 mm] profile height and 0.75 in [19.1 mm] rib spacing; custom ends available.",
+              "Type C rib (urethane hinge): approx. 0.22 in [5.5 mm] profile height and ~0.81 in [20.5 mm] pitch region.",
+              "Type C end options: Flat End and Angled End with dimensions shown at 0.20 in [5.1 mm], 0.78 in [19.9 mm], and 0.95 in [24.1 mm].",
+              "Note: values above are transcribed from the provided reference drawings and should be finalized against production drawings before release."
+            ],
+            "media": "/products/roll-up-way-covers/rwc-5.jpeg"
+          },
           {
             "title": "Roll-up cover without housing",
             "body": [
@@ -439,7 +502,7 @@
               "Little space required",
               "Fixing via fixing angle bracket or integration within the machine"
             ],
-            "media": "PHOTOGRAPH"
+            "media": "/products/roll-up-way-covers/rwc-2.png"
           },
           {
             "title": "Roll-up cover with housing",
@@ -450,12 +513,14 @@
               "Protection against chipping waste, oils and cooling emulsions",
               "For high travel speeds and loads."
             ],
-            "media": "PHOTOGRAPH"
+            "media": "/products/roll-up-way-covers/rwc-1.png"
           },
           {
             "title": "Special Apron curtain Roller Cover",
-            "body": [],
-            "media": ["PHOTOGRAPH", "Video"]
+            "body": [
+              "Special apron curtain roller covers are available for custom machine geometries where compact roll-up integration and extended travel are required."
+            ],
+            "media": "/products/roll-up-way-covers/rwc-4.png"
           }
         ]
       },
@@ -473,6 +538,7 @@
         "items": [
           "Custom widths, lengths, and travel configurations",
           "Spring-loaded or motorized roller systems",
+          "Motorised roll way covers available on request",
           "Material selection based on speed, temperature, and environment",
           "Heavy-duty variants for high chip load applications",
           "Customized mounting options for OEM and retrofit installations"

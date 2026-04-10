@@ -239,17 +239,25 @@ export default function ProductImageSlider({
     }
   };
 
-  // Keep the active thumbnail in view (helps when auto-scrolling).
+  // Keep the active thumbnail in view without affecting page scroll.
   const thumbRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const thumbStripRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     if (!hasMany) return;
+    const strip = thumbStripRef.current;
     const el = thumbRefs.current[realIndex];
-    el?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center",
+    if (!strip || !el) return;
+
+    const targetLeft =
+      el.offsetLeft - strip.clientWidth / 2 + el.clientWidth / 2;
+    const maxLeft = Math.max(0, strip.scrollWidth - strip.clientWidth);
+    const nextLeft = Math.max(0, Math.min(targetLeft, maxLeft));
+
+    strip.scrollTo({
+      left: nextLeft,
+      behavior: prefersReducedMotion ? "auto" : "smooth",
     });
-  }, [hasMany, realIndex]);
+  }, [hasMany, realIndex, prefersReducedMotion]);
 
   if (imageCount === 0) {
     return (
@@ -390,7 +398,10 @@ export default function ProductImageSlider({
       {hasMany && (
         <div className="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-2">
           <div className="relative">
-            <div className="flex gap-2.5 overflow-x-auto pb-1 snap-x snap-mandatory">
+            <div
+              ref={thumbStripRef}
+              className="flex gap-2.5 overflow-x-auto pb-1 snap-x snap-mandatory"
+            >
               {images.map((src, i) => {
                 const isActive = realIndex === i;
                 return (
