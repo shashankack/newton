@@ -68,7 +68,7 @@ const Section4 = () => {
       </section>
 
       <div className="paperstrip">
-        <img src="paperstrip.webp" alt="Decorative separator" />
+        <img src="/paperstrip.webp" alt="Decorative separator" />
       </div>
     </>
   );
