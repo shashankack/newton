@@ -8,55 +8,56 @@ const Section7 = () => {
 
   const faqs = [
     {
+      question: "What exactly do you manufacture?",
+      answer:
+        "We design and manufacture industrial protection systems, telescopic covers, custom bellows, and custom-engineered fabrication solutions. Every product is built for durability, precision, and long-term performance in demanding industrial environments.",
+    },
+    {
+      question: "Do you accept small or one-off orders?",
+      answer:
+        "Our systems are optimized for bulk and repeat manufacturing, which allows us to maintain quality and cost efficiency. If you’re looking for a long-term supplier or recurring requirements, we’re the right fit.",
+    },
+    {
       question:
-        "What types of machine protection systems do you manufacture?",
+        "Can you build products based on our drawings or machine specs?",
       answer:
-        "We manufacture telescopic way covers, roll-up covers, apron covers, CNC machine enclosures, and custom machine covers designed for industrial use.",
+        "Yes. Most of our work is fully customized. Share your drawings, dimensions, or application details and we’ll engineer a solution that fits your exact requirement.",
     },
     {
-      question: "Do you support custom dimensions and OEM specifications?",
+      question: "Which industries do you typically work with?",
       answer:
-        "Yes. Our team develops custom-built solutions around your machine envelope, travel range, mounting conditions, and performance requirements.",
+        "We work with companies in manufacturing and heavy engineering, CNC and machine tool industries, and automotive and automation sectors. If your operations involve machinery, protection, or fabrication, we likely already serve your space.",
     },
     {
-      question: "Which industries do you serve?",
+      question: "Why should we choose you over other vendors?",
       answer:
-        "We work with machine tool manufacturers, CNC equipment builders, industrial automation teams, heavy engineering firms, and metalworking plants.",
+        "Because we don’t build temporary fixes. We focus on long-term industrial performance, helping you reduce breakdowns, maintenance costs, and replacement cycles. With over 25+ years of experience, we operate as a manufacturing partner, not just a vendor.",
     },
     {
-      question: "How do your products perform in harsh shop floor environments?",
+      question: "What is your typical turnaround time?",
       answer:
-        "Our products are engineered for coolant exposure, metal chips, high-speed operation, and continuous machine cycles to ensure dependable long-term performance.",
+        "Lead time depends on the complexity and volume of your order. Once we understand your requirement, we commit to a clear and realistic delivery schedule and stick to it.",
     },
     {
-      question: "Can you manufacture both standard and custom products?",
+      question: "Do you provide support after delivery?",
       answer:
-        "Yes. We produce standard configurations and also build custom protection systems tailored to specific machine and process requirements.",
+        "Yes. We provide ongoing technical support and guidance to ensure proper installation and performance. Our goal is long-term reliability, not just dispatching products.",
     },
     {
-      question: "Do you provide support during development and fitment?",
+      question:
+        "Where are you located? Do you serve clients outside Bangalore?",
       answer:
-        "Yes. We collaborate during requirement definition, drawing review, and production planning to help ensure accurate fit and function at installation.",
+        "We are based in Peenya Industrial Area, Bangalore, and serve clients across India and supply to Europe as well. We also support export requirements for bulk and repeat orders.",
     },
     {
-      question: "What materials and fabrication capabilities do you have?",
+      question: "How do you ensure quality and consistency?",
       answer:
-        "We specialize in precision sheet metal fabrication and machine protection assemblies with strong focus on dimensional accuracy and durability.",
+        "Our manufacturing is backed by 25+ years of experience, continuous process upgrades, and strict quality checks at every stage. We build products that are meant to last, even in demanding industrial conditions.",
     },
     {
-      question: "How do you ensure quality consistency?",
+      question: "How do we get started?",
       answer:
-        "Our manufacturing process follows structured engineering checks, controlled fabrication practices, and inspection routines to maintain reliable quality across batches.",
-    },
-    {
-      question: "Can you supply for domestic and international customers?",
-      answer:
-        "Yes. We support machine tool manufacturers and OEMs in domestic and international markets with consistent communication and dependable delivery.",
-    },
-    {
-      question: "How do I request a quote for my machine application?",
-      answer:
-        "Share your machine details, operating conditions, travel dimensions, and any available drawings through our contact form. Our team will review and respond with the right proposal.",
+        "Simple. Send us your requirements, drawings, or specifications, and our team will evaluate and get back with the best solution and pricing. Serious enquiries with clear requirements get the fastest response.",
     },
   ];
 

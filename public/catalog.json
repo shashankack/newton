@@ -159,7 +159,7 @@
         "/products/wiper-systems/formed-wipers-2.png",
         "/products/wiper-systems/moulded-wipers-1.png",
         "/products/wiper-systems/moulded-wipers-2.png",
-        "/products/wiper-systems/moulded-wipers-3.jpg"
+        "/products/wiper-systems/moulded-wipers-3.png"
       ],
       "construction_variants": {
         "title": "CONSTRUCTION VARIANTS",
@@ -318,7 +318,8 @@
       "media": [
         "/products/apron-covers/ac-1.png",
         "/products/apron-covers/ac-2.png",
-        "/products/apron-covers/ac-3.png"
+        "/products/apron-covers/ac-3.png",
+        "/products/roll-up-way-covers/rwc-7.png"
       ],
       "construction_variants": {},
       "materials_expertise": {
@@ -417,8 +418,7 @@
         "/products/roll-up-way-covers/rwc-3.png",
         "/products/roll-up-way-covers/rwc-4.png",
         "/products/roll-up-way-covers/rwc-5.jpeg",
-        "/products/roll-up-way-covers/rwc-6.jpeg",
-        "/products/roll-up-way-covers/rwc-7.png"
+        "/products/roll-up-way-covers/rwc-6.jpeg"
       ],
       "construction_variants": {
         "title": "CONSTRUCTION VARIANTS",
