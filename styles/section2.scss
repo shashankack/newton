@@ -60,88 +60,77 @@
   border-bottom: 1px solid #2f5bff;
 }
 
-/* ---------- CARDS ---------- */
+/* ---------- ABOUT US SECTION ---------- */
 
-.clarity-cards {
+.clarity-about {
   margin-top: 100px;
+}
+
+.clarity-about-content h2 {
+  font-size: 42px;
+  color: #2f5bff;
+  font-weight: 700;
+  margin-bottom: 60px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: clamp(28px, 6vw, 36px);
+    margin-bottom: 40px;
+  }
+}
+
+.clarity-about-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border: 2px solid #2f5bff;
-  
-  
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 24px;
+  }
 }
 
-.clarity-card {
-  padding: 20px;
-  border-right: 2px solid #2f5bff;
-  position: relative;
-  padding-bottom: 40px;
- 
+.clarity-about-item {
+  padding: 32px;
+  background: white;
+  border-left: 4px solid #2f5bff;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(47, 91, 255, 0.1);
+    transform: translateY(-4px);
+  }
+
+  h3 {
+    font-size: 20px;
+    color: #2f5bff;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 24px;
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
 }
-
-.clarity-card:last-child {
-  border-right: none;
-}
-
-.clarity-card h3 {
-  font-size: 34px;
-  color: #2f5bff;
-  margin-bottom: 8px;
-  font-weight:600;
-
-}
-
-.clarity-sub {
-  font-weight: 400;
-  display: block;
-  margin-bottom: 12px;
-  color: #2f5bff;
-  font-size: 18px;
-}
-
-.clarity-card p {
-  font-size: 14px;
-  color: #333;
-  max-width: 260px;
-}
-
-/* ---------- VISUAL PLACEHOLDERS ---------- */
-
-.clarity-visual {
-  margin-top: 40px;
-  height: 220px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* subtle personality like reference */
-.clarity-visual.today::after {
-  position: absolute;
-  color: #9aff00;
-  font-size: 22px;
-  top: 20px;
-  left: 20px;
-
-}
-
-.clarity-visual.yesterday::after {
-  position: absolute;
-  font-size: 48px;
-  top: 40px;
-  right: 40px;
-}
-
-.clarity-visual.tomorrow::after {
-  position: absolute;
-  font-size: 48px;
-  bottom: 40px;
-  right: 40px;
-}
-
-/* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 1024px) {
   .clarity {
@@ -153,17 +142,8 @@
     gap: 40px;
   }
 
-  .clarity-cards {
+  .clarity-about-grid {
     grid-template-columns: 1fr;
-  }
-
-  .clarity-card {
-    border-right: none;
-    border-bottom: 1px solid #2f5bff;
-  }
-
-  .clarity-card:last-child {
-    border-bottom: none;
   }
 }
 
@@ -177,21 +157,12 @@
     margin-top: 28px;
   }
 
-  .clarity-cards {
-    margin-top: 48px;
+  .clarity-about {
+    margin-top: 60px;
   }
 
-  .clarity-card h3 {
-    font-size: clamp(22px, 5vw, 28px);
-  }
-
-  .clarity-card p {
-    max-width: 100%;
-  }
-
-  .clarity-visual {
-    height: 180px;
-    margin-top: 24px;
+  .clarity-about-grid {
+    gap: 20px;
   }
 }
 

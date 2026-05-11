@@ -38,43 +38,46 @@ const Section2 = () => {
         </div>
       </div>
 
-      <div className="clarity-cards">
-        <div className="clarity-card">
-          <h3>Telescopic Way Covers</h3>
-          <span className="clarity-sub">Heavy-duty linear axis protection.</span>
-          <p>
-            Engineered telescopic way covers for CNC machine protection with
-            high dimensional accuracy and long service life.
-          </p>
+      <div className="clarity-about">
+        <div className="clarity-about-content">
+          <h2>About Our Approach</h2>
+          
+          <div className="clarity-about-grid">
+            <div className="clarity-about-item">
+              <h3>Engineering Excellence</h3>
+              <p>
+                Every protection system we design is engineered to meet exact 
+                customer requirements, ensuring seamless integration with your 
+                machinery and operational environment.
+              </p>
+            </div>
 
-          <div className="clarity-visual today">
-            <img src="today.webp" alt="Telescopic way covers" />
-          </div>
-        </div>
+            <div className="clarity-about-item">
+              <h3>Global Manufacturing Standards</h3>
+              <p>
+                With manufacturing facilities in India, we maintain international 
+                quality standards while delivering cost-effective solutions for 
+                global OEM partners and industrial operators.
+              </p>
+            </div>
 
-        <div className="clarity-card">
-          <h3>Roll-Up and Apron Covers</h3>
-          <span className="clarity-sub">Compact protection for moving elements.</span>
-          <p>
-            Durable roll-up way covers and apron covers designed to handle
-            coolant exposure, chips, and repetitive machine movement.
-          </p>
+            <div className="clarity-about-item">
+              <h3>Trusted by Industry Leaders</h3>
+              <p>
+                Our machine protection systems are deployed across CNC machining 
+                centers, automation equipment, and precision industrial machinery 
+                worldwide, trusted for reliability and durability.
+              </p>
+            </div>
 
-          <div className="clarity-visual yesterday">
-            <img src="yesterday.webp" alt="Roll-up and apron machine covers" />
-          </div>
-        </div>
-
-        <div className="clarity-card">
-          <h3>CNC Machine Enclosures</h3>
-          <span className="clarity-sub">Precision sheet metal assemblies.</span>
-          <p>
-            Custom CNC machine enclosures and sheet metal machine enclosures
-            developed for OEM specifications and operating conditions.
-          </p>
-
-          <div className="clarity-visual tomorrow">
-            <img src="tomorrow.webp" alt="CNC machine enclosure" />
+            <div className="clarity-about-item">
+              <h3>Custom Solutions</h3>
+              <p>
+                From prototype development to series production, we support custom 
+                engineering requirements for retrofit and OEM applications across 
+                all major machine tool manufacturers.
+              </p>
+            </div>
           </div>
         </div>
       </div>

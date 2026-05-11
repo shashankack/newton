@@ -15,15 +15,16 @@ const Hero = () => {
   const carouselInterval = useRef(null);
 
   const media = [
-    { url: "/hero/hero1.png", alt: "Signage Products", type: "image" },
-    { url: "/hero/hero2.png", alt: "Signage Products", type: "image" },
-    { url: "/hero/one.png", alt: "Signage Products", type: "image" },
-    { url: "/hero/two.png", alt: "Signage Products", type: "image" },
+    { url: "/hero/1.png", alt: "Signage Products", type: "image" },
+    { url: "/hero/2.png", alt: "Signage Products", type: "image" },
+    { url: "/hero/3.png", alt: "Signage Products", type: "image" },
+    { url: "/hero/4.png", alt: "Signage Products", type: "image" },
+    { url: "/hero/5.png", alt: "Signage Products", type: "image" },
     {
       url: "/hero/hero.mp4",
       alt: "Signage Satellite View",
       type: "video",
-      poster: "/hero/hero1.png",
+      poster: "/hero/1.png",
     },
   ];
 
