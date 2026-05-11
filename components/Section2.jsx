@@ -31,7 +31,7 @@ const Section2 = () => {
               applications.
             </p>
 
-            <a href="/store/product/telescopic-steel-way-covers" className="clarity-link">
+            <a href="/products" className="clarity-link">
               Explore our products →
             </a>
           </div>

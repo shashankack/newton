@@ -6,6 +6,7 @@ import "../styles/footer.scss";
 const Footer = () => {
   const quickLinks = [
     { label: "Home", href: "/" },
+    { label: "Products", href: "/products" },
     { label: "About Us", href: "/about" },
     { label: "Contact", href: "/#contact" },
     { label: "Privacy Policy", href: "/privacy-policy" },

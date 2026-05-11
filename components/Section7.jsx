@@ -31,7 +31,7 @@ const Section7 = () => {
     {
       question: "Why should we choose you over other vendors?",
       answer:
-        "Because we don’t build temporary fixes. We focus on long-term industrial performance, helping you reduce breakdowns, maintenance costs, and replacement cycles. With over 25+ years of experience, we operate as a manufacturing partner, not just a vendor.",
+        "Because we don't build temporary fixes. We focus on long-term industrial performance, helping you reduce breakdowns, maintenance costs, and replacement cycles. With over 35+ years of experience, we operate as a manufacturing partner, not just a vendor.",
     },
     {
       question: "What is your typical turnaround time?",

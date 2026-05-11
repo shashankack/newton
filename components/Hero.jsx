@@ -17,6 +17,8 @@ const Hero = () => {
   const media = [
     { url: "/hero/hero1.png", alt: "Signage Products", type: "image" },
     { url: "/hero/hero2.png", alt: "Signage Products", type: "image" },
+    { url: "/hero/one.png", alt: "Signage Products", type: "image" },
+    { url: "/hero/hero2.png", alt: "Signage Products", type: "image" },
     {
       url: "/hero/hero.mp4",
       alt: "Signage Satellite View",
