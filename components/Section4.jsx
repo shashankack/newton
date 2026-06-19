@@ -1,9 +1,11 @@
 "use client";
 
-import React from "react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import "../styles/section4.scss";
 
 const Section4 = () => {
+  const sectionRef = useScrollReveal({ stagger: 0.1 });
+
   const benefits = [
     "35+ years of manufacturing experience in machine tool protection",
     "OEM-focused engineering with precise fit and function",
@@ -14,19 +16,22 @@ const Section4 = () => {
   ];
 
   return (
-    <>
-      <section className="section4">
+    <section className="section4" ref={sectionRef}>
         <div className="section4-content">
           <div className="section4-left">
-            <div className="brain-illustration">
-              <img src="brain-collage.webp" alt="Brain illustration" />
+            <div className="brain-illustration" data-reveal>
+              <img src="/brain-collage.webp" alt="Brain illustration" />
             </div>
           </div>
 
           <div className="section4-right">
-            <p className="section4-subtitle">WHY CHOOSE SIGN AGE</p>
-            <h2 className="section4-title">Why partner with SignAge?</h2>
-            <p className="section4-description">
+            <p className="section4-subtitle" data-reveal>
+              WHY CHOOSE SIGN AGE
+            </p>
+            <h2 className="section4-title" data-reveal>
+              Why partner with SignAge?
+            </h2>
+            <p className="section4-description" data-reveal>
               We combine engineering discipline, modern manufacturing,
               and practical machine tool expertise to deliver protection
               systems that perform consistently in industrial environments.
@@ -34,7 +39,7 @@ const Section4 = () => {
 
             <ul className="benefits-list">
               {benefits.map((benefit, index) => (
-                <li key={index} className="benefit-item">
+                <li key={index} className="benefit-item" data-reveal>
                   <div className="check-icon">
                     <svg
                       width="24"
@@ -65,12 +70,11 @@ const Section4 = () => {
             </ul>
           </div>
         </div>
-      </section>
 
-      <div className="paperstrip">
-        <img src="/paperstrip.webp" alt="Decorative separator" />
-      </div>
-    </>
+        <div className="paperstrip" data-reveal>
+          <img src="/paperstrip.webp" alt="Decorative separator" />
+        </div>
+      </section>
   );
 };
 

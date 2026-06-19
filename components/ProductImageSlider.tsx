@@ -12,7 +12,7 @@ import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 export interface ProductImageSliderProps {
   /** Array of image src paths to display */
   images: string[];
-  /** Alt text prefix — each slide appends its index */
+  /** Alt text prefix each slide appends its index */
   alt: string;
   /** Enable automatic slide advance (auto-scroll). Defaults to true. */
   autoScroll?: boolean;
@@ -325,7 +325,7 @@ export default function ProductImageSlider({
               >
                 <img
                   src={src}
-                  alt={`${alt} — view ${slideRealIndex + 1}`}
+                  alt={`${alt} view ${slideRealIndex + 1}`}
                   className="h-full w-full object-contain"
                   draggable={false}
                   loading={slideRealIndex === 0 ? "eager" : "lazy"}

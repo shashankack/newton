@@ -1,9 +1,11 @@
 "use client";
 
-import React from "react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import "../styles/footer.scss";
 
 const Footer = () => {
+  const footerRef = useScrollReveal({ y: 32, stagger: 0.08 });
+
   const quickLinks = [
     { label: "Home", href: "/" },
     { label: "Products", href: "/products" },
@@ -43,17 +45,15 @@ const Footer = () => {
           }}
         />
       </div>
-      <footer className="footer">
-        {/* Grid Background Layer */}
+      <footer className="footer" ref={footerRef}>
         <div className="grid-background">
           <div className="grid-lines horizontal"></div>
           <div className="grid-lines vertical"></div>
         </div>
 
-        {/* Main Content Layer */}
         <div className="footer-content">
           <div className="footer-columns">
-            <div className="footer-column brand-column">
+            <div className="footer-column brand-column" data-reveal>
               <h3 className="column-title">Sign-Age</h3>
               <p className="brand-copy">
                 Manufacturer of machine protection systems for CNC and
@@ -62,7 +62,7 @@ const Footer = () => {
               </p>
             </div>
 
-            <div className="footer-column">
+            <div className="footer-column" data-reveal>
               <h3 className="column-title">Quick Links</h3>
               <ul className="column-links">
                 {quickLinks.map((link) => (
@@ -73,7 +73,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="footer-column">
+            <div className="footer-column" data-reveal>
               <h3 className="column-title">Core Products</h3>
               <ul className="column-links">
                 {productLinks.map((link) => (
@@ -84,7 +84,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="footer-column">
+            <div className="footer-column" data-reveal>
               <h3 className="column-title">Contact</h3>
               <div className="footer-contact">
                 <a
@@ -100,7 +100,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="footer-bottom">
+          <div className="footer-bottom" data-reveal>
             <div className="footer-copyright">© 2026 Sign Age</div>
             <div className="footer-credit">
               Website built by{" "}

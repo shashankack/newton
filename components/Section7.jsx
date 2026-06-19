@@ -1,9 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import "../styles/section7.scss";
 
 const Section7 = () => {
+  const sectionRef = useScrollReveal({ y: 36, stagger: 0.06 });
   const [openIndex, setOpenIndex] = useState(0);
 
   const faqs = [
@@ -15,13 +17,13 @@ const Section7 = () => {
     {
       question: "Do you accept small or one-off orders?",
       answer:
-        "Our systems are optimized for bulk and repeat manufacturing, which allows us to maintain quality and cost efficiency. If you’re looking for a long-term supplier or recurring requirements, we’re the right fit.",
+        "Our systems are optimized for bulk and repeat manufacturing, which allows us to maintain quality and cost efficiency. If you're looking for a long-term supplier or recurring requirements, we're the right fit.",
     },
     {
       question:
         "Can you build products based on our drawings or machine specs?",
       answer:
-        "Yes. Most of our work is fully customized. Share your drawings, dimensions, or application details and we’ll engineer a solution that fits your exact requirement.",
+        "Yes. Most of our work is fully customized. Share your drawings, dimensions, or application details and we'll engineer a solution that fits your exact requirement.",
     },
     {
       question: "Which industries do you typically work with?",
@@ -66,11 +68,15 @@ const Section7 = () => {
   };
 
   return (
-    <section className="section7">
+    <section className="section7" ref={sectionRef}>
       <div className="section7-content">
         <div className="section7-header">
-          <p className="section7-subtitle">FAQS</p>
-          <h2 className="section7-title">Got questions?</h2>
+          <p className="section7-subtitle" data-reveal>
+            FAQS
+          </p>
+          <h2 className="section7-title" data-reveal>
+            Got questions?
+          </h2>
         </div>
 
         <div className="faq-list">
@@ -78,6 +84,7 @@ const Section7 = () => {
             <div
               key={index}
               className={`faq-item ${openIndex === index ? "open" : ""}`}
+              data-reveal
             >
               <button
                 className="faq-question"

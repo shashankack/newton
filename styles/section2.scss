@@ -98,10 +98,16 @@
   padding: 32px;
   background: white;
   border-left: 4px solid #2f5bff;
-  transition: all 0.3s ease;
+
+  &.is-revealed {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
 
   &:hover {
     box-shadow: 0 4px 16px rgba(47, 91, 255, 0.1);
+  }
+
+  &.is-revealed:hover {
     transform: translateY(-4px);
   }
 

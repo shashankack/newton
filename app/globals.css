@@ -30,6 +30,17 @@ html {
   scroll-behavior: smooth;
 }
 
+[data-reveal]:not(.is-revealed) {
+  transition: none !important;
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

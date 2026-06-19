@@ -60,7 +60,6 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  transition: all 0.3s ease-in-out;
 }
 
 .section3-right {
@@ -70,11 +69,12 @@
 }
 
 .section3-discover-title {
-  font-size: 0.8rem;
+  font-size: 16px;
   font-weight: 500;
   margin-bottom: 1.5rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  color: #4169e1;
 }
 
 .section3-product-list {
@@ -83,13 +83,16 @@
   margin: 0;
 }
 
+.section3-product-item.is-revealed a {
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
 .section3-product-item a {
   display: block;
   color: #212529;
   font-size: clamp(16px, 1.5vw, 20px);
   text-decoration: none;
   padding: 12px 20px;
-  transition: all 0.3s ease;
   font-weight: 500;
   border-radius: 5px;
 

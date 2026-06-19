@@ -42,33 +42,52 @@ $white: #ffffff;
       background: #0f172a;
     }
   }
+
+  .menu-toggle {
+    background: rgba(15, 23, 42, 0.05);
+    border-color: rgba(15, 23, 42, 0.12);
+
+    span {
+      background: #0f172a;
+    }
+
+    &:hover {
+      background: rgba(15, 23, 42, 0.08);
+    }
+  }
 }
 
 .menu-toggle {
-  width: 48px;
-  height: 48px;
+  display: none;
+  width: 44px;
+  height: 44px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   cursor: pointer;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5px;
-  transition: all 0.3s ease;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
   backdrop-filter: blur(10px);
+  flex-shrink: 0;
+  z-index: 110;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
 
   &:hover {
     background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
   }
 
   span {
+    display: block;
     width: 20px;
     height: 2px;
     background: $white;
-    transition: all 0.3s ease;
+    transition: transform 0.25s ease, opacity 0.25s ease;
   }
 
   &.active {
@@ -138,5 +157,149 @@ $white: #ffffff;
 
   @media (max-width: 768px) {
     display: none;
+  }
+}
+
+// ── Mobile drawer ──────────────────────────────────────────
+
+.nav-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background: rgba(15, 23, 42, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  backdrop-filter: blur(2px);
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 130;
+  width: min(320px, 88vw);
+  height: 100dvh;
+  background: #ffffff;
+  border-left: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: -12px 0 40px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 24px 24px 32px;
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.nav-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.nav-drawer-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #4169e1;
+}
+
+.nav-drawer-close {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  background: #f5f5f7;
+  color: #0f172a;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #ebebeb;
+  }
+}
+
+.nav-drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+
+  a {
+    display: block;
+    padding: 16px 12px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    text-decoration: none;
+    border-radius: 8px;
+    border-left: 3px solid transparent;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+    &:hover,
+    &.active {
+      background: #f0f3ff;
+      color: #4169e1;
+      border-left-color: #4169e1;
+    }
+  }
+}
+
+.nav-drawer-footer {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid #ebebeb;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: "Space Mono", monospace;
+}
+
+.nav-drawer-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  background: #9acd32;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #89b92d;
+  }
+}
+
+.nav-drawer-phone {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4169e1;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    text-decoration: underline;
   }
 }

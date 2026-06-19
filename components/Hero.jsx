@@ -1,32 +1,41 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { gsap } from "gsap";
+import { gsap, useGSAP } from "@/lib/gsap";
 import "../styles/hero.scss";
+
+const MEDIA = [
+  { url: "/hero/1.png", alt: "Signage Products", type: "image" },
+  { url: "/hero/2.png", alt: "Signage Products", type: "image" },
+  { url: "/hero/3.png", alt: "Signage Products", type: "image" },
+  { url: "/hero/4.png", alt: "Signage Products", type: "image" },
+  { url: "/hero/5.png", alt: "Signage Products", type: "image" },
+  { url: "/hero/6.png", alt: "Signage Products", type: "image" },
+  { url: "/hero/7.png", alt: "Signage Products", type: "image" },
+  {
+    url: "/hero/hero.mp4",
+    alt: "Signage Satellite View",
+    type: "video",
+    poster: "/hero/1.png",
+  },
+  {
+    url: "/hero/hero_1.mp4",
+    alt: "Signage Products",
+    type: "video",
+    poster: "/hero/1.png",
+  },
+];
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const prevSlideRef = useRef(0);
   const isAnimatingRef = useRef(false);
   const touchStartRef = useRef(null);
+  const heroRef = useRef(null);
 
   const heroImagesRef = useRef([]);
   const heroTextRefs = useRef([]);
   const carouselInterval = useRef(null);
-
-  const media = [
-    { url: "/hero/1.png", alt: "Signage Products", type: "image" },
-    { url: "/hero/2.png", alt: "Signage Products", type: "image" },
-    { url: "/hero/3.png", alt: "Signage Products", type: "image" },
-    { url: "/hero/4.png", alt: "Signage Products", type: "image" },
-    { url: "/hero/5.png", alt: "Signage Products", type: "image" },
-    {
-      url: "/hero/hero.mp4",
-      alt: "Signage Satellite View",
-      type: "video",
-      poster: "/hero/1.png",
-    },
-  ];
 
   const isVideoItem = useCallback((item) => {
     if (!item) return false;
@@ -36,12 +45,12 @@ const Hero = () => {
 
   const startInterval = useCallback(() => {
     clearInterval(carouselInterval.current);
-    const currentIsVideo = isVideoItem(media[currentSlide]);
-    if (currentIsVideo) return; // let video control advancement
+    const currentIsVideo = isVideoItem(MEDIA[currentSlide]);
+    if (currentIsVideo) return;
     carouselInterval.current = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % media.length);
+      setCurrentSlide((prev) => (prev + 1) % MEDIA.length);
     }, 5000);
-  }, [media.length, currentSlide, isVideoItem]);
+  }, [currentSlide, isVideoItem]);
 
   const goToSlide = useCallback(
     (index) => {
@@ -56,112 +65,119 @@ const Hero = () => {
     heroTextRefs.current[index] = el;
   };
 
-  // Initial entry animation
-  useEffect(() => {
-    const textNodes = heroTextRefs.current.filter(Boolean);
+  useGSAP(
+    () => {
+      const textNodes = heroTextRefs.current.filter(Boolean);
+      const firstImage = heroImagesRef.current[0];
+      if (!firstImage || !textNodes.length) return;
 
-    gsap.set(heroImagesRef.current[0], { opacity: 1, scale: 1 });
-    gsap.set(textNodes, { opacity: 0, y: 46 });
+      gsap.set(firstImage, { opacity: 1, scale: 1 });
+      gsap.set(textNodes, { opacity: 0, y: 46 });
 
-    const tl = gsap.timeline();
-    tl.from(heroImagesRef.current[0], {
-      scale: 1.15,
-      opacity: 0,
-      duration: 1.6,
-      ease: "power3.out",
-    }).to(
-      textNodes,
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.95,
-        ease: "power3.out",
-        stagger: 0.12,
-      },
-      "-=0.95",
-    );
-  }, []);
+      gsap
+        .timeline()
+        .from(firstImage, {
+          scale: 1.15,
+          opacity: 0,
+          duration: 1.6,
+          ease: "power3.out",
+        })
+        .to(
+          textNodes,
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.95,
+            ease: "power3.out",
+            stagger: 0.12,
+          },
+          "-=0.95",
+        );
+    },
+    { scope: heroRef },
+  );
 
-  // Start autoplay
+  useGSAP(
+    () => {
+      const prevSlide = prevSlideRef.current;
+      if (prevSlide === currentSlide || isAnimatingRef.current) return;
+
+      const currentImage = heroImagesRef.current[currentSlide];
+      const prevImage = heroImagesRef.current[prevSlide];
+      if (!currentImage || !prevImage) return;
+
+      isAnimatingRef.current = true;
+
+      gsap
+        .timeline({
+          onComplete: () => {
+            prevSlideRef.current = currentSlide;
+            isAnimatingRef.current = false;
+          },
+        })
+        .to(
+          prevImage,
+          {
+            opacity: 0,
+            scale: 1.05,
+            duration: 0.9,
+            ease: "power2.inOut",
+          },
+          0,
+        )
+        .fromTo(
+          currentImage,
+          { opacity: 0, scale: 1.1 },
+          { opacity: 1, scale: 1, duration: 1.3, ease: "power2.out" },
+          0.4,
+        );
+    },
+    { scope: heroRef, dependencies: [currentSlide], revertOnUpdate: false },
+  );
+
   useEffect(() => {
     startInterval();
     return () => clearInterval(carouselInterval.current);
   }, [startInterval]);
 
-  // Slide transition — runs for every slide change including wrap-around
-  useEffect(() => {
-    const prevSlide = prevSlideRef.current;
-    if (prevSlide === currentSlide || isAnimatingRef.current) return;
-
-    const currentImage = heroImagesRef.current[currentSlide];
-    const prevImage = heroImagesRef.current[prevSlide];
-    if (!currentImage || !prevImage) return;
-
-    isAnimatingRef.current = true;
-
-    const tl = gsap.timeline({
-      onComplete: () => {
-        prevSlideRef.current = currentSlide;
-        isAnimatingRef.current = false;
-      },
-    });
-
-    tl.to(
-      prevImage,
-      {
-        opacity: 0,
-        scale: 1.05,
-        duration: 0.9,
-        ease: "power2.inOut",
-      },
-      0,
-    ).fromTo(
-      currentImage,
-      { opacity: 0, scale: 1.1 },
-      { opacity: 1, scale: 1, duration: 1.3, ease: "power2.out" },
-      0.4,
-    );
-  }, [currentSlide]);
-
-  // Play/pause videos when their slide becomes active. Ensures autoplay doesn't get stuck on videos.
   useEffect(() => {
     heroImagesRef.current.forEach((container, idx) => {
       if (!container) return;
-      const vid = container.querySelector && container.querySelector("video");
+      const vid = container.querySelector?.("video");
       if (!vid) return;
 
       if (idx === currentSlide) {
         try {
           vid.muted = true;
           const p = vid.play();
-          if (p && typeof p.then === "function") p.catch(() => {});
-          // clear interval while video plays
+          if (p?.then) p.catch(() => {});
           clearInterval(carouselInterval.current);
-          const onEnded = () => goToSlide((currentSlide + 1) % media.length);
-          // store listener so we can remove it later
+          const onEnded = () => goToSlide((currentSlide + 1) % MEDIA.length);
           vid.__onHeroEnded = onEnded;
           vid.addEventListener("ended", onEnded);
-        } catch (e) {}
+        } catch {
+          /* autoplay may be blocked */
+        }
       } else {
         try {
           if (vid.__onHeroEnded) {
             vid.removeEventListener("ended", vid.__onHeroEnded);
             delete vid.__onHeroEnded;
           }
-        } catch (e) {}
-        try {
           vid.pause();
           vid.currentTime = 0;
-        } catch (e) {}
+        } catch {
+          /* ignore playback errors */
+        }
       }
     });
 
-    if (!isVideoItem(media[currentSlide])) startInterval();
+    if (!isVideoItem(MEDIA[currentSlide])) startInterval();
 
     return () => {
       heroImagesRef.current.forEach((container) => {
         if (!container) return;
-        const v = container.querySelector && container.querySelector("video");
+        const v = container.querySelector?.("video");
         if (!v) return;
         try {
           if (v.__onHeroEnded) {
@@ -169,12 +185,13 @@ const Hero = () => {
             delete v.__onHeroEnded;
           }
           v.pause();
-        } catch (e) {}
+        } catch {
+          /* ignore */
+        }
       });
     };
-  }, [currentSlide, goToSlide, isVideoItem, media, startInterval]);
+  }, [currentSlide, goToSlide, isVideoItem, startInterval]);
 
-  // Pause on scroll, resume after
   useEffect(() => {
     let scrollTimeout;
     const handleScroll = () => {
@@ -189,46 +206,46 @@ const Hero = () => {
     };
   }, [startInterval]);
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "ArrowLeft")
-        goToSlide((currentSlide - 1 + media.length) % media.length);
-      if (e.key === "ArrowRight") goToSlide((currentSlide + 1) % media.length);
+        goToSlide((currentSlide - 1 + MEDIA.length) % MEDIA.length);
+      if (e.key === "ArrowRight") goToSlide((currentSlide + 1) % MEDIA.length);
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [currentSlide, media.length, goToSlide]);
+  }, [currentSlide, goToSlide]);
 
-  // Touch / swipe support
   const handleTouchStart = (e) => {
     touchStartRef.current = e.touches[0].clientX;
   };
+
   const handleTouchEnd = (e) => {
     if (touchStartRef.current === null) return;
     const delta = touchStartRef.current - e.changedTouches[0].clientX;
     if (Math.abs(delta) > 50) {
       delta > 0
-        ? goToSlide((currentSlide + 1) % media.length)
-        : goToSlide((currentSlide - 1 + media.length) % media.length);
+        ? goToSlide((currentSlide + 1) % MEDIA.length)
+        : goToSlide((currentSlide - 1 + MEDIA.length) % MEDIA.length);
     }
     touchStartRef.current = null;
   };
 
   return (
-    <div className="lightship-container">
-      {/* Hero Section */}
+    <div className="lightship-container" ref={heroRef}>
       <section
         className="hero"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
         <div className="hero-carousel">
-          {media.map((item, index) => (
+          {MEDIA.map((item, index) => (
             <div
               key={index}
               className={`hero-image ${index === currentSlide ? "active" : ""}`}
-              ref={(el) => (heroImagesRef.current[index] = el)}
+              ref={(el) => {
+                heroImagesRef.current[index] = el;
+              }}
               style={{ opacity: index === 0 ? 1 : 0 }}
             >
               {isVideoItem(item) ? (
@@ -270,11 +287,10 @@ const Hero = () => {
           </p>
         </div>
 
-        {/* Prev / Next Arrows */}
         <button
           className="carousel-arrow carousel-arrow--prev"
           onClick={() =>
-            goToSlide((currentSlide - 1 + media.length) % media.length)
+            goToSlide((currentSlide - 1 + MEDIA.length) % MEDIA.length)
           }
           aria-label="Previous slide"
         >
@@ -282,14 +298,14 @@ const Hero = () => {
         </button>
         <button
           className="carousel-arrow carousel-arrow--next"
-          onClick={() => goToSlide((currentSlide + 1) % media.length)}
+          onClick={() => goToSlide((currentSlide + 1) % MEDIA.length)}
           aria-label="Next slide"
         >
           &#8250;
         </button>
 
         <div className="carousel-indicators">
-          {media.map((_, index) => (
+          {MEDIA.map((_, index) => (
             <button
               key={index}
               className={`indicator ${index === currentSlide ? "active" : ""}`}
@@ -299,7 +315,7 @@ const Hero = () => {
           ))}
         </div>
 
-        <button className="scroll-indicator">
+        <button className="scroll-indicator" type="button">
           <span>↓</span>
           <span>Scroll to Explore</span>
         </button>

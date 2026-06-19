@@ -1,9 +1,11 @@
 "use client";
 
-import React from "react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import "../styles/section5.scss";
 
 const Section5 = () => {
+  const sectionRef = useScrollReveal({ y: 48, stagger: 0.08 });
+
   const criteria = [
     {
       img: "/eye.svg",
@@ -28,12 +30,16 @@ const Section5 = () => {
   ];
 
   return (
-    <section className="section5">
+    <section className="section5" ref={sectionRef}>
       <div className="section5-content">
         <div className="section5-header">
-          <p className="section5-subtitle">INDUSTRIES WE SERVE</p>
-          <h2 className="section5-title">Built for demanding industrial applications</h2>
-          <p className="section5-description">
+          <p className="section5-subtitle" data-reveal>
+            INDUSTRIES WE SERVE
+          </p>
+          <h2 className="section5-title" data-reveal>
+            Built for demanding industrial applications
+          </h2>
+          <p className="section5-description" data-reveal>
             We support OEMs and manufacturers looking for reliable
             machine protection systems and custom sheet metal enclosures.
           </p>
@@ -41,17 +47,17 @@ const Section5 = () => {
 
         <div className="criteria-grid">
           {criteria.map((item, index) => (
-            <div key={index} className="criteria-card">
+            <div key={index} className="criteria-card" data-reveal>
               <div className="card-inner-layout">
                 <div className="criteria-image-container">
-                  <img src={item.img} alt="icon" className="criteria-img" />
+                  <img src={item.img} alt="" className="criteria-img" />
                 </div>
                 <p className="criteria-title">{item.title}</p>
               </div>
             </div>
           ))}
 
-          <div className="criteria-card cta-card">
+          <div className="criteria-card cta-card" data-reveal>
             <div className="cta-content">
               <p className="cta-text">Need a custom solution?</p>
               <div className="cta-action">
